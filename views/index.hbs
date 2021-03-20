@@ -56,6 +56,9 @@
                     title="刪除"
                     data-toggle="modal"
                     data-target="#modalDelete"
+                    data-usage="delete"
+                    data-id="{{ this._id }}"
+                    onclick="getIdAndSetupRoute(this)"
                     class="badge badge-pill badge-light border border-secondary px-2 py-1"
                     ><i class="fas fa-trash-alt"></i
                   ></a>
