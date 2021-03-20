@@ -1,13 +1,14 @@
 # Restaurant List
 
-A simple project by using Express.js
+A restaurant website by using Node.js and MongoDB.
+You can view all restaurants, edit individual restaurant, add restaurant, and even delete restaurant by clicking on responding buttons.
 
-## Project Initialize
+## Installation and Execution
 
 1. **Download project by Terminal**
 
 ```
-git clone https://github.com/Chien-Liang/restaurant_list
+git clone https://github.com/Chien-Liang/restaurant_list_mongodb
 ```
 
 2. **Enter project directory**
@@ -19,31 +20,35 @@ cd restaurant_list
 3. **Install packages**
 
 ```
-// Express.js
-npm i express
-
-// express-handlebars
-npm i express-handlebars
-
-// nodemon
-npm i nodemon
+npm install
 ```
 
-4. **Run the server**
+4. **Connnect to MongoDB and create default restaurans data**
 
 ```
-npm run dev
+npm run seed
 ```
+
+> As `Succeed!` appeared in Terminal, data were setup finished, press keyboard `Control(^ or ctrl)`and `c` to end up.
 
 5. **Start App**
-   > After `Listening to http://localhost:3000` appeared in Terminal, type `http://localhost:3000` in broswer to start the app.
+
+```
+npm start
+```
+
+> Terminal will show `Listening to http://localhost:3000` and `MongoDB Connecting`, and go to `http://localhost:300` to use the app.
 
 ## Features
 
-- Listing restaurants from restaurants.json
+- CRUD restaurants data with database
 - Searching restaurants by keywords
-- Get detail informations by clicking on each restaurants
+- Get detail information by clicking on each restaurant
+- Click edit-badge or edit-buttons to edit information
+- Click delete-badge or delete-buttons to delete restaurant
+- Click Add-button to add new data into database
 
-### Searching
+## prerequisites
 
-Type the name(English as well) or category of the restaurant in search bar
+- Node.js v15.8
+- MongoDB v4.4.3
