@@ -1,10 +1,22 @@
-// Setups
+// Packages
 const express = require('express')
 const app = express()
 const exphbs = require('express-handlebars')
+const mongoose = require('mongoose')
+
+// Middlewares
 app.engine('hbs', exphbs({ defaultLayout: 'main', extname: 'hbs' }))
 app.set('view engine', 'hbs')
 app.use(express.static('public'))
+
+// MongoDB
+mongoose.connect('mongodb://localhost/restaurant-list', {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+})
+const db = mongoose.connection
+db.on('error', () => console.log('Failed Mongodb connecting'))
+db.once('once', () => console.log('MongoDB Connecting...'))
 
 // Routers
 const index = require('./controllers/index')
