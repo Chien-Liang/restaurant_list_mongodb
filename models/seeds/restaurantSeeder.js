@@ -11,30 +11,8 @@ db.once('open', () => console.log('Succeed'))
 // modules, files
 const Restaurant = require('../restaurants')
 const restaurantList = require('./restaurant.json').results
+const keysTransfer = require('../keysTransfer')
 
 for (let restaurant of restaurantList) {
-  const {
-    id,
-    name,
-    name_en,
-    category,
-    phone,
-    image,
-    google_map,
-    rating,
-    description,
-    location,
-  } = restaurant
-  Restaurant.create({
-    id,
-    name,
-    name_en,
-    category,
-    phone,
-    image,
-    google_map,
-    rating,
-    description,
-    location,
-  })
+  keysTransfer(restaurant)
 }
