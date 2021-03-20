@@ -14,7 +14,7 @@ git clone https://github.com/Chien-Liang/restaurant_list_mongodb.git
 2. **Enter project directory**
 
 ```
-cd restaurant_list
+cd restaurant_list_mongodb-master
 ```
 
 3. **Install packages**
