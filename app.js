@@ -9,7 +9,7 @@ const bodyParser = require('body-parser')
 app.engine('hbs', exphbs({ defaultLayout: 'main', extname: 'hbs' }))
 app.set('view engine', 'hbs')
 app.use(express.static('public'))
-app.use(bodyParser.urlencoded({ extname: true }))
+app.use(bodyParser.urlencoded({ extended: false }))
 app.use(express.json())
 
 // MongoDB Connection
