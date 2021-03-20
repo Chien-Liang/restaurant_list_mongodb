@@ -1,7 +1,7 @@
 # Restaurant List
 
-A restaurant website by using Node.js and MongoDB.
-You can view all restaurants, edit individual restaurant, add restaurant, and even delete restaurant by clicking on responding buttons.
+- A restaurant website by using Node.js and MongoDB.
+- You can view all restaurants, edit individual restaurant, add restaurant, and even delete restaurant by clicking on responding buttons.
 
 ## Installation and Execution
 
@@ -37,7 +37,7 @@ npm run seed
 npm start
 ```
 
-> Terminal will show `Listening to http://localhost:3000` and `MongoDB Connecting`, and go to `http://localhost:300` to use the app.
+> Terminal will show `Listening to http://localhost:3000` and `MongoDB Connecting`, and go to `http://localhost:300` to start the app.
 
 ## Features
 
