@@ -29,6 +29,7 @@ app.get('/search', index.searchRestaurants)
 app.get('/restaurants/:id', index.showRestaurant)
 app.post('/restaurants/:id/delete', post.deleteRestaurant)
 app.post('/restaurants/:id/edit', post.editRestaurant)
+app.post('/create', post.createRestaurant)
 
 // Link to server
 app.listen(3000, () => console.log('Listening to http://localhost:3000'))
