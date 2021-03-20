@@ -24,6 +24,7 @@ const post = require('./controllers/post_controller')
 app.get('/', index.getAllRestaurants)
 app.get('/search', index.searchRestaurants)
 app.get('/restaurants/:id', index.showRestaurant)
+app.post('/restaurants/:id/delete', post.deleteRestaurant)
 
 // Link to server
 app.listen(3000, () => console.log('Listening to http://localhost:3000'))
