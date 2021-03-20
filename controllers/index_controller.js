@@ -31,7 +31,12 @@ exports.searchRestaurants = (req, res) => {
 }
 
 exports.showRestaurant = (req, res) => {
-  const id = +req.params.id
-  const title = true
-  res.render('showPage', { restaurant: restaurantsList[id - 1], title })
+  const id = req.params.id
+  Restaurant.findById(id)
+    .lean()
+    .then(restaurant => {
+      const title = restaurant.name
+      res.render('showPage', { restaurant, title })
+    })
+    .catch(err => console.log(err))
 }
