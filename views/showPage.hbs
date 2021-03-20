@@ -49,6 +49,17 @@
 
 <!-- Functional Buttons -->
 <div class="functional-buttons-right">
+  <!-- The reate button toggle create-form-modal -->
+  <button
+    type="button"
+    title="新增餐廳"
+    class="btn btn-outline-success btn-lg my-2 mx-2"
+    data-toggle="modal"
+    data-target="#modalCreate"
+  >
+    <i class="fas fa-plus"></i>
+  </button>
+
   <!-- The edit button toggle edit-form-modal -->
   <button
     type="button"
@@ -71,6 +82,7 @@
   >
     <i class="fas fa-edit"></i>
   </button>
+
   <!-- The delete button toggle delete-certify-modal -->
   <button
     type="button"
@@ -84,6 +96,7 @@
   >
     <i class="fas fa-trash-alt"></i>
   </button>
+
   <!-- HomePage Button -->
   <a
     class="btn btn-outline-primary btn-lg my-2 mx-2"
@@ -259,6 +272,148 @@
 
           <div class="modal-footer">
             <button type="submit" class="btn btn-outline-info">儲存</button>
+            <button
+              type="button"
+              class="btn btn-outline-secondary ml-2"
+              data-dismiss="modal"
+            >
+              取消
+            </button>
+          </div>
+        </form>
+        <!-- End -->
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal-Create -->
+<div
+  class="modal fade"
+  id="modalCreate"
+  tabindex="-1"
+  aria-labelledby="create-form-modal"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="create-form-modal">新增餐廳資訊</h5>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <!-- Input Form -->
+        <form method="POST" id="form-create" action="/create">
+          <div class="form-group">
+            <label for="input-name"> 店名（中）</label>
+            <input
+              type="text"
+              class="form-control"
+              id="input-name"
+              m
+              name="name"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="input-name_en">店名（英）</label>
+            <input
+              type="text"
+              class="form-control"
+              id="input-name_en"
+              name="name_en"
+              required
+            />
+          </div>
+          <div class="form-row d-flex justify-content-between">
+            <div class="form-group col-md-4">
+              <label for="input-category">餐廳分類</label>
+              <input
+                type="text"
+                class="form-control"
+                id="input-category"
+                name="category"
+                required
+              />
+            </div>
+            <div class="form-group col-md-4">
+              <label for="input-phone">電話</label>
+              <input
+                type="text"
+                class="form-control"
+                id="input-phone"
+                name="phone"
+                required
+              />
+            </div>
+            <div class="form-group col-md-2">
+              <label for="input-rating">評價</label>
+              <input
+                type="number"
+                class="form-control"
+                id="input-rating"
+                name="rating"
+                min="0"
+                max="5"
+                step="0.1"
+                required
+              />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="input-location">地址</label>
+            <input
+              type="text"
+              class="form-control"
+              id="input-location"
+              name="location"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="input-google_map">Google Map</label>
+            <input
+              type="text"
+              class="form-control"
+              id="input-google_map"
+              name="google_map"
+              placeholder="Google Map 連結"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="input-image">餐聽照片</label>
+            <input
+              type="text"
+              class="form-control"
+              id="input-image"
+              name="image"
+              placeholder="照片連結"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="input-description">餐廳簡介</label>
+            <textarea
+              class="form-control"
+              id="input-description"
+              name="description"
+              rows="4"
+              required
+            ></textarea>
+          </div>
+
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-outline-info">新增</button>
             <button
               type="button"
               class="btn btn-outline-secondary ml-2"
