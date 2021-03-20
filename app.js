@@ -19,8 +19,9 @@ db.on('error', () => console.log('Failed Mongodb connecting'))
 db.once('open', () => console.log('MongoDB Connecting...'))
 
 // Routers
-const index = require('./controllers/index')
-app.get('/', index.getIndex)
+const index = require('./controllers/index_controller')
+const post = require('./controllers/post_controller')
+app.get('/', index.getAllRestaurants)
 app.get('/search', index.getSearch)
 app.get('/restaurants/:id', index.getShowpage)
 
