@@ -21,15 +21,9 @@ const db = mongoose.connection
 db.on('error', () => console.log('Failed Mongodb connecting'))
 db.once('open', () => console.log('MongoDB Connecting...'))
 
-// Routers
-const index = require('./controllers/index_controller')
-const post = require('./controllers/post_controller')
-app.get('/', index.getAllRestaurants)
-app.get('/search', index.searchRestaurants)
-app.get('/restaurants/:id', index.showRestaurant)
-app.post('/restaurants/:id/delete', post.deleteRestaurant)
-app.post('/restaurants/:id/edit', post.editRestaurant)
-app.post('/create', post.createRestaurant)
+// Router
+const router = require('./routes/route')
+app.use(router)
 
 // Link to server
 app.listen(3000, () => console.log('Listening to http://localhost:3000'))
