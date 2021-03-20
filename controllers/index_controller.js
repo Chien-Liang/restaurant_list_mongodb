@@ -10,7 +10,7 @@ exports.getAllRestaurants = (req, res) => {
     .catch(err => console.log(err))
 }
 
-exports.getSearch = (req, res) => {
+exports.searchRestaurants = (req, res) => {
   const keyword = req.query.keyword.toLowerCase()
   Restaurant.find()
     .lean()
@@ -30,10 +30,8 @@ exports.getSearch = (req, res) => {
     })
 }
 
-const getShowpage = (req, res) => {
+exports.showRestaurant = (req, res) => {
   const id = +req.params.id
   const title = true
   res.render('showPage', { restaurant: restaurantsList[id - 1], title })
 }
-
-exports.getShowpage = getShowpage
