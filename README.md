@@ -8,7 +8,7 @@ You can view all restaurants, edit individual restaurant, add restaurant, and ev
 1. **Download project by Terminal**
 
 ```
-git clone https://github.com/Chien-Liang/restaurant_list_mongodb
+git clone https://github.com/Chien-Liang/restaurant_list_mongodb.git
 ```
 
 2. **Enter project directory**
