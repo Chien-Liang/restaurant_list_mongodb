@@ -50,21 +50,33 @@
                   <a
                     href="#"
                     title="編輯"
+                    class="badge badge-pill badge-info px-2 py-1 mx-1"
                     data-toggle="modal"
                     data-target="#modalEdit"
-                    class="badge badge-pill badge-info px-2 py-1 mx-1"
+                    data-usage="edit"
+                    data-id="{{ this._id }}"
+                    data-name="{{ this.name }}"
+                    data-name_en="{{ this.name_en }}"
+                    data-category="{{ this.category }}"
+                    data-phone="{{ this.phone }}"
+                    data-rating="{{ this.rating }}"
+                    data-image="{{ this.image }}"
+                    data-google_map="{{ this.google_map }}"
+                    data-location="{{ this.location }}"
+                    data-description="{{ this.description }}"
+                    onclick="getInfo(this)"
                     ><i class="fas fa-edit"></i
                   ></a>
                   <!-- The delete button toggle delete-certify-modal -->
                   <a
                     href="#"
                     title="刪除"
+                    class="badge badge-pill badge-light border border-secondary px-2 py-1"
                     data-toggle="modal"
                     data-target="#modalDelete"
                     data-usage="delete"
                     data-id="{{ this._id }}"
                     onclick="getIdAndSetupRoute(this)"
-                    class="badge badge-pill badge-light border border-secondary px-2 py-1"
                     ><i class="fas fa-trash-alt"></i
                   ></a>
                 </div>
