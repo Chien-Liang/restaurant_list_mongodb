@@ -10,18 +10,24 @@ exports.getAllRestaurants = (req, res) => {
     .catch(err => console.log(err))
 }
 
-const getSearch = (req, res) => {
+exports.getSearch = (req, res) => {
   const keyword = req.query.keyword.toLowerCase()
-  const searchResults = restaurantsList.filter(
-    restaurant =>
-      restaurant.name.toLowerCase().includes(keyword) ||
-      restaurant.name_en.toLowerCase().includes(keyword) ||
-      restaurant.category.includes(keyword)
-  )
-  res.render('index', {
-    restaurants: searchResults,
-    searchWord: req.query.keyword,
-  })
+  Restaurant.find()
+    .lean()
+    .then(restaurants => {
+      return restaurants.filter(
+        restaurant =>
+          restaurant.name.toLowerCase().includes(keyword) ||
+          restaurant.name_en.toLowerCase().includes(keyword) ||
+          restaurant.category.includes(keyword)
+      )
+    })
+    .then(results => {
+      res.render('index', {
+        restaurants: results,
+        searchWord: req.query.keyword,
+      })
+    })
 }
 
 const getShowpage = (req, res) => {
@@ -30,5 +36,4 @@ const getShowpage = (req, res) => {
   res.render('showPage', { restaurant: restaurantsList[id - 1], title })
 }
 
-exports.getSearch = getSearch
 exports.getShowpage = getShowpage
