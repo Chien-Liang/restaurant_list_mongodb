@@ -1,4 +1,4 @@
-# Restaurant List
+# Restaurant List with MongoDB
 
 - A restaurant website by using Node.js and MongoDB.
 - You can view all restaurants, edit individual restaurant, add restaurant, and even delete restaurant by clicking on responding buttons.
